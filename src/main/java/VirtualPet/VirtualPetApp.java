@@ -70,16 +70,15 @@ public class VirtualPetApp {
 				System.out.println("Press 5 tuck Julius into bed.");
 				choice = input.nextLine();
 			}
+
 			if (choice.equals("1")) {
 				if (julius.getSickness() == true) {
 					System.out.println("Julius is not feeling well and does not want to eat anything right now.");
 					System.out.println();
-					input.nextLine();
 				} else {
 					System.out.println("How much do you want to feed Julius?");
 					food = input.nextInt();
 					input.nextLine();
-					julius.randomizeFreeWill();
 					if (julius.getFreeWill() == false) {
 						julius.feed(food);
 						System.out.println("Julius loves the food you gave him!");
@@ -90,15 +89,15 @@ public class VirtualPetApp {
 						julius.play(25);
 					}
 				}
+
 			} else if (choice.equals("2")) {
 				if (julius.getSickness() == true) {
 					System.out.println("Julius is not feeling well and does not want to drink anything right now.");
-					input.nextLine();
+					System.out.println();
 				} else {
 					System.out.println("How much water do you want to give Julius?");
 					volume = input.nextInt();
 					input.nextLine();
-					julius.randomizeFreeWill();
 					if (julius.getFreeWill() == false) {
 						julius.water(volume);
 						System.out.println("Julius is so happy you gave him water!");
@@ -109,41 +108,47 @@ public class VirtualPetApp {
 						julius.feed(25);
 					}
 				}
+
 			} else if (choice.equals("3")) {
 				if (julius.getSickness() == true) {
 					System.out.println("Julius is not feeling well and does not want to play with you.");
-					input.nextLine();
+					System.out.println();
 				} else {
 					System.out.println("How long do you want to play with Julius?");
 					time = input.nextInt();
 					input.nextLine();
-					julius.randomizeFreeWill();
 					if (julius.getFreeWill() == false) {
-					julius.play(time);
-					System.out.println("Julius had a lot of fun playing with you!");
-					System.out.println();
+						julius.play(time);
+						System.out.println("Julius had a lot of fun playing with you!");
+						System.out.println();
 					} else {
 						System.out.println("Julius ignores you and gets a drink of water.");
 						julius.water(25);
 					}
 				}
+
 			} else if (choice.equals("4")) {
 				if (julius.getSickness() == false) {
 					System.out.println("Julius is feeling great and does not need any medicine!");
 					System.out.println();
-					input.nextLine();
 				} else {
 					julius.giveMedicine();
 					System.out.println("Julius is feeling much better!");
 					System.out.println();
 				}
+
 			} else if (choice.equals("5")) {
 				System.out.println("Julius is feeling sleepy but looks foward to spending time with you soon!");
 				System.exit(0);
+
 			} else {
 				System.out.println("Julius does not understand your input. Please try again.");
+				System.out.println();
 			}
+
 		} while (!choice.equals("5"));
+
+		input.close();
 
 	}
 

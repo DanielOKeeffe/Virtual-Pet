@@ -15,7 +15,7 @@ public class VirtualPet {
 		this.thirst = thirst;
 		this.boredom = boredom;
 		this.sickness = sickness;
-		this.freeWill = freeWill;	
+		this.freeWill = freeWill;
 	}
 
 	public int getHunger() {
@@ -87,14 +87,18 @@ public class VirtualPet {
 	}
 
 	public void randomizeSickness() {
-		randomizedSickness = Math.random() * 10;
-		if (randomizedSickness < 3) {
-			sickness = true;
+		if (sickness == true) {
+			//if sickness is true do not randomize state of sickness
 		} else {
-			sickness = false;
+			randomizedSickness = Math.random() * 10;
+			if (randomizedSickness < 3) {
+				sickness = true;
+			} else {
+				sickness = false;
+			}
 		}
 	}
-	
+
 	public boolean getFreeWill() {
 		if (freeWill == false) {
 			return false;
@@ -102,13 +106,13 @@ public class VirtualPet {
 			return true;
 		}
 	}
-	
+
 	public void randomizeFreeWill() {
 		randomizedFreeWill = Math.random() * 10;
 		if (randomizedFreeWill < 3) {
-			freeWill = false;
-		} else {
 			freeWill = true;
+		} else {
+			freeWill = false;
 		}
 	}
 
