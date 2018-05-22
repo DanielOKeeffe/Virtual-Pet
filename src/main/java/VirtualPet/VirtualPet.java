@@ -90,8 +90,8 @@ public class VirtualPet {
 		if (sickness == true) {
 			//if sickness is true do not randomize state of sickness
 		} else {
-			randomizedSickness = Math.random() * 10;
-			if (randomizedSickness < 3) {
+			randomizedSickness = Math.random() * 100;
+			if (randomizedSickness < 30) {
 				sickness = true;
 			} else {
 				sickness = false;
@@ -108,8 +108,8 @@ public class VirtualPet {
 	}
 
 	public void randomizeFreeWill() {
-		randomizedFreeWill = Math.random() * 10;
-		if (randomizedFreeWill < 3) {
+		randomizedFreeWill = Math.random() * 100;
+		if (randomizedFreeWill < 30) {
 			freeWill = true;
 		} else {
 			freeWill = false;
